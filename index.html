@@ -2,13 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="LunchCheck">
 <head>
     <title></title>
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 </head>
 
 <body>
 
     <div class="form-group lunchForm" ng-controller="LunchCheckController">
-        <textarea class="form-control" rows="5" id="comment" ng-model="items"></textarea>
+        <input type="text" class="form-control" rows="5" id="comment" ng-model="items"></textarea>
         <button type="button" class="btn btn-info" ng-click="subm(items)">Check If Too Much</button>
         <p>{{property}}</p>
     </div>
