@@ -9,7 +9,7 @@
     function LunchCheck($scope) {
 
 	$scope.items = '';
-        $scope.submit = function (items) {
+        $scope.subm = function (items) {
 			console.log(items);
 			var arr = [];
 			var splite = $scope.items.split(',');
