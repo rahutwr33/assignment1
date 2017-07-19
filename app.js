@@ -1,21 +1,37 @@
-var app =angular.module('LunchCheck', []);
-    app.controller('LunchCheckController', function($scope) {
-        $scope.check=function(){
-     
-      if($scope.inputdata == undefined){
-       $scope.message = "Check If Too Much"
-      }
-     else{
-      let data=$scope.inputdata.split(',');
-      if(data.length <=3){
+(function () {
+    'use strict';
+    angular.module('LunchCheck', [])
+        .controller('LunchCheckController', LunchCheck);
 
-        $scope.message = "Enjoy!"
+    LunchCheck.$inject = ['$scope'];
 
-      }else if(data.length >=4){
-        $scope.message = "Too much!"
-      }
-   }
 
-   }
-       
-    });
+    function LunchCheck($scope) {
+
+	$scope.items = '';
+        $scope.subm = function (items) {
+			
+			var arr = [];
+			var splite = $scope.items.split(',');
+			for(var item =  splite.length; item >= 0; item--){
+				if(splite[item] == "" | splite[item] ==  " " | splite[item] == '\n'| splite[item] == ' \n '){
+					splite.splice(item,1);
+				}
+			}
+            if ( splite == ',' |splite ==  "" | splite ==  " "  | splite == ' ' | splite == 0 ){               
+			  
+			  $scope.propertyColor={"color" : "red"};
+			   $scope.property = "Please enter data first";			   
+            }
+            else {	
+			$scope.propertyColor={"color" : "green"};
+               $scope.property = splite.length <= 3 ? "enjoy!" : "too much!";                
+            }
+
+        };
+
+
+
+    };
+
+})();  
