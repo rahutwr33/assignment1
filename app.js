@@ -10,7 +10,7 @@
 
 	$scope.items = '';
         $scope.submit = function (items) {
-			
+			console.log(items);
 			var arr = [];
 			var splite = $scope.items.split(',');
 			for(var item =  splite.length; item >= 0; item--){
