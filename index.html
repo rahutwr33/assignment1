@@ -1,21 +1,32 @@
-
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="LunchCheck">
+<!doctype html >
+<html ng-app="LunchCheck">
 <head>
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <style>
+    .message {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    </style>
 </head>
 
 <body>
-
-    <div class="form-group" ng-controller="LunchCheckController">
-        <input type="text" class="form-control" rows="5" id="comment" ng-model="items"></textarea>
-        <button type="button" class="btn btn-info" ng-click="subm(items)">Check If Too Much</button>
-        <p>{{property}}</p>
+    <div class="container" ng-controller="LunchCheckController">
+        <h1>Lunch Checker</h1>
+        <div class="form-group">
+            <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" ng-model="items" class="form-control">
+            {{message}}
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" ng-click="check(items)">Check If Too Much</button>
+        </div>
+        <div class="form-group message">
+        </div>
     </div>
-	
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
-    <script src="app.js"></script>
 </body>
+
 </html>
