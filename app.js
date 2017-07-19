@@ -9,7 +9,7 @@
     function LunchCheck($scope) {
 
 	$scope.items = '';
-        $scope.subm = function (items) {
+        $scope.submit = function (items) {
 			
 			var arr = [];
 			var splite = $scope.items.split(',');
@@ -20,11 +20,11 @@
 			}
             if ( splite == ',' |splite ==  "" | splite ==  " "  | splite == ' ' | splite == 0 ){               
 			  
-			  $scope.propertyColor={"color" : "red"};
+			 
 			   $scope.property = "Please enter data first";			   
             }
             else {	
-			$scope.propertyColor={"color" : "green"};
+			
                $scope.property = splite.length <= 3 ? "enjoy!" : "too much!";                
             }
 
