@@ -1,32 +1,19 @@
-<!doctype html >
-<html ng-app="LunchCheck">
+
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="LunchCheck">
 <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
-    <script type="text/javascript" src="./app.js"></script>
-    <style>
-    .message {
-        font-size: 1.3em;
-        font-weight: bold;
-    }
-    </style>
+    <title></title>
+    <link href="bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container" ng-controller="LunchCheckController">
-        <h1>Lunch Checker</h1>
-        <div class="form-group">
-            <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" ng-model="items" class="form-control">
-           {{property}}
-        </div>
-        <div class="form-group">
-            <button class="btn btn-default" ng-click="submit(items)">Check If Too Much</button>
-        </div>
-        <div class="form-group message">
-        </div>
-    </div>
-</body>
 
+    <div class="form-group lunchForm" ng-controller="LunchCheckController">
+        <textarea class="form-control" rows="5" id="comment" ng-model="items"></textarea>
+        <button type="button" class="btn btn-info" ng-click="subm(items)">Check If Too Much</button>
+        <p>{{property}}</p>
+    </div>
+	
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
