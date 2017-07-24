@@ -9,8 +9,8 @@
     function LunchCheck($scope) {
 
   $scope.items = '';
-        $scope.check = function (items) {
-      console.log(items);
+        $scope.check = function () {
+     
       var arr = [];
       var splite = $scope.items.split(',');
       for(var item =  splite.length; item >= 0; item--){
